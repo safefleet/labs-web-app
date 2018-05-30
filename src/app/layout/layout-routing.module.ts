@@ -4,7 +4,7 @@ import { LayoutComponent } from './layout.component';
 
 const routes: Routes = [
     {
-        path: '',
+        path: 'layout',
         component: LayoutComponent,
         children: [
             { path: '', redirectTo: 'dashboard' },
@@ -16,6 +16,14 @@ const routes: Routes = [
             { path: 'grid', loadChildren: './grid/grid.module#GridModule' },
             { path: 'components', loadChildren: './bs-component/bs-component.module#BsComponentModule' },
             { path: 'blank-page', loadChildren: './blank-page/blank-page.module#BlankPageModule' }
+        ]
+    },
+    {
+        path: '',
+        component: LayoutComponent,
+        children: [
+            { path: '', redirectTo: 'vehicles' },
+            { path: 'vehicles', loadChildren: './vehicle/vehicle.module#VehicleModule' },
         ]
     }
 ];
