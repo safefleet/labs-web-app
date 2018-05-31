@@ -1,4 +1,26 @@
-<ul>
-    <li>First Vehicle</li>
-    <li>Second vehicle</li>
-</ul>
+<div [@routerTransition]>
+
+
+
+<div class="card_vehicle" >Owned Cars</div>
+<table class="card-body table" >
+    <thead>
+    <tr class="table_firstrow">
+        <th>#</th>
+        <th>Car Number</th>
+        <th>Type of car</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let vehicle of vehicles" class="table_allrows">
+        <th scope="row">{{vehicle.id}}</th>
+        <td>{{vehicle.number}}</td>
+        <td>{{vehicle.type}}</td>
+        <td><a href="https://www.w3schools.com" class="list_btn ">Edit car</a></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+
+

@@ -1,0 +1,33 @@
+$topnav-background-color: #222;
+
+.card_vehicle{
+  // background: $topnav-background-color;
+  border-left: 6px solid white;
+  background-color: rgba(0,0,0,0.8);
+  padding: 10px 0px 10px 10px;
+  color: white;
+  font-size: 22px;
+
+}
+
+.table_firstrow{
+  background-color: rgba(255,255,255,0.2);
+  font-size: 18px;
+  color:white;
+}
+.body_vehicle{
+
+ // background-image: url("/src/assets/images/vehicle_list_bk.jpg");
+ // background-attachment: fixed;
+
+}
+.table_allrows{
+  color:white;
+  background-color: rgba(0,0,0, 0.6);
+}
+.list_btn{
+  color:white;
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 5px 10px 5px 10px;
+}
