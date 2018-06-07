@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {VehicleService} from "../../../../shared/services/vehicle/vehicle.service";
 
 @Component({
   selector: 'app-list',
@@ -24,9 +25,18 @@ export class VehicleListComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private vehicleService: VehicleService) { }
 
   ngOnInit() {
+    this.vehicleService.getVehicles().subscribe(
+        (response) => {
+          console.log("success: ", response);
+          this.vehicles = response;
+        },
+        (err) => {
+          console.log("error: ", err);
+        }
+    )
   }
 
 }
