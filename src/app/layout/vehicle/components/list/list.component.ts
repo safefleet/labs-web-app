@@ -8,22 +8,7 @@ import {VehicleService} from "../../../../shared/services/vehicle/vehicle.servic
 })
 export class VehicleListComponent implements OnInit {
 
-  vehicles: [Vehicle] = [
-    {
-      id: 7,
-      type: 'Citroen',
-      number: 'CS28ROS',
-      color: 'white',
-      owner: 'adina@mail.com'
-    },
-    {
-      id: 71,
-      type: 'Citroen',
-      number: 'TM28ROS',
-      color: 'red',
-      owner: 'adina2@mail.com'
-    }
-  ];
+  vehicles: [Vehicle];
 
   constructor(private vehicleService: VehicleService) { }
 
