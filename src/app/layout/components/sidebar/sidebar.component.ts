@@ -8,9 +8,9 @@ import { TranslateService } from '@ngx-translate/core';
     styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
-    isActive: boolean = false;
-    showMenu: string = '';
-    pushRightClass: string = 'push-right';
+    isActive = false;
+    showMenu = '';
+    pushRightClass = 'push-right';
 
     constructor(private translate: TranslateService, public router: Router) {
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de']);

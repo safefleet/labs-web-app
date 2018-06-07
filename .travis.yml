@@ -1,7 +1,6 @@
 language: node_js
 
 node_js:
-  - "iojs"
   - "9"
 
 install:
@@ -16,5 +15,3 @@ script:
   - yarn lint
   - yarn build
   - scp -o StrictHostKeyChecking=no -P 22022 $TRAVIS_BUILD_DIR/dist/* www-data@labs.safefleet.eu:/var/www/labs-web-app
-
-  
