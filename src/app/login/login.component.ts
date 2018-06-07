@@ -10,8 +10,9 @@ import {AuthService} from "../shared/services/auth/auth.service";
     animations: [routerTransition()]
 })
 export class LoginComponent implements OnInit {
-    private email: string = 'adina2@mail.com';
-    private password: string = 'pass';
+    private email: string;
+    private password: string;
+    private errorMessage;
 
     constructor(public router: Router,
                 private auth: AuthService) {}
@@ -21,11 +22,12 @@ export class LoginComponent implements OnInit {
     login() {
         this.auth.login(this.email, this.password).subscribe(
             (response) => {
-                console.log('token: ', response.token);
                 localStorage.setItem('jwt', response.token);
+                this.router.navigate(['/vehicles']);
             },
             (err) => {
                 console.log('err: ', err);
+                this.errorMessage = 'Authentication failed!';
             }
         );
     }
