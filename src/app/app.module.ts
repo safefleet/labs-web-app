@@ -35,7 +35,6 @@ export function createTranslateLoader(http: HttpClient) {
         AppRoutingModule
     ],
     declarations: [AppComponent],
-    providers: [AuthGuard],
     providers: [AuthGuard,
         AuthService,
         httpInterceptorProviders],
