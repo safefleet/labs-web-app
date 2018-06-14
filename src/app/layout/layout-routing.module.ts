@@ -23,8 +23,7 @@ const routes: Routes = [
         component: LayoutComponent,
         children: [
             { path: '', redirectTo: 'vehicles' },
-            { path: 'vehicles', loadChildren: './vehicle/vehicle.module#VehicleModule' },
-        ]
+            { path: 'vehicles', loadChildren: './vehicle/vehicle.module#VehicleModule' }        ]
     }
 ];
 

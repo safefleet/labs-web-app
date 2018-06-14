@@ -27,6 +27,8 @@ export class LoginComponent implements OnInit {
             },
             (err) => {
                 console.log('err: ', err);
+                console.log('username:' , this.email);
+                console.log('pass:' , this.password);
                 this.errorMessage = 'Authentication failed!';
             }
         );

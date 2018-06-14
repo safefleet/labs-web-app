@@ -13,6 +13,7 @@ import { AuthGuard } from './shared';
 import { AuthService } from './shared/services/auth/auth.service';
 import { httpInterceptorProviders } from './shared/http-interceptors/index';
 import {VehicleService} from './shared/services/vehicle/vehicle.service';
+import {AgmCoreModule} from '@agm/core';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -35,7 +36,10 @@ export function createTranslateLoader(http: HttpClient) {
                 deps: [HttpClient]
             }
         }),
-        AppRoutingModule
+        AppRoutingModule,
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyDnnUZ4c_0mxBGKFLPK6m6j91QX6CnSAPA'
+        }),
     ],
     declarations: [AppComponent],
     providers: [AuthGuard,
