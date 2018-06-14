@@ -12,4 +12,8 @@ export class VehicleService {
   getVehicles(): Observable<[Vehicle]> {
     return this.http.get<[Vehicle]>(this.URL);
   }
+
+  getPositions(vehicleId: number): Observable<[Position]> {
+    return this.http.get<[Position]>(this.URL + vehicleId + '/positions/');
+  }
 }

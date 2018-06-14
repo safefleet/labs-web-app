@@ -1,5 +1,6 @@
 import {Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {MapsAPILoader} from '@agm/core';
+import {VehicleService} from "../../../../shared/services/vehicle/vehicle.service";
 
 declare var google: any;
 
@@ -8,7 +9,14 @@ declare var google: any;
     templateUrl: './detail.component.html',
     styleUrls: ['./detail.component.scss']
 })
-export class DetailComponent implements OnInit, OnChanges {
+export class DetailComponent implements OnInit {
+    // public lat =  0.47;
+    // public lng = 3.27;
+
+    // constructor(private vehicleService: VehicleService) {
+    //
+    // }
+
     numDeltas = 100;
     delay = 10; // milliseconds
     i = 0;
@@ -22,8 +30,25 @@ export class DetailComponent implements OnInit, OnChanges {
     @Input() lng: number;
     @Input() zoom: number;
 
-    constructor(private mapsAPILoader: MapsAPILoader) {
+    constructor(private mapsAPILoader: MapsAPILoader,
+                private vehicleService: VehicleService
+    ) {
+        this.lat = 10.35;
+        this.lng = 3.48;
 
+        this.timeout();
+    }
+
+    timeout() {
+        setTimeout(() => {
+            // Do Something Here
+            // Then recall the parent function to
+            // create a recursive loop.
+            this.lat += 0.02;
+            this.lng += 0.03;
+
+            this.timeout();
+        }, 1000);
     }
 
     ngOnInit() {
