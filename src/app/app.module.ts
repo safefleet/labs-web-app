@@ -9,9 +9,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
-import {AuthService} from "./shared/services/auth/auth.service";
-import {VehicleService} from './shared/services/vehicle/vehicle.service';
-import {httpInterceptorProviders} from './shared/http-interceptors/index';
+import { AuthService } from './shared/services/auth/auth.service';
+import { httpInterceptorProviders } from './shared/http-interceptors/index';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
