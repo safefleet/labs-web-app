@@ -10,9 +10,9 @@ import {AuthService} from '../shared/services/auth/auth.service';
     animations: [routerTransition()]
 })
 export class LoginComponent implements OnInit {
-    private email: string;
-    private password: string;
-    private errorMessage;
+    public email: string;
+    public password: string;
+    public errorMessage;
 
     constructor(public router: Router,
                 private auth: AuthService) {}
