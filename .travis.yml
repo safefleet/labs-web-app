@@ -17,6 +17,6 @@ script:
 
 deploy:
   provider: script
-  script:  scp -r -o StrictHostKeyChecking=no -P 22022 $TRAVIS_BUILD_DIR/dist/* www-data@labs.safefleet.eu:/var/www/labs-web-app
+  script: pwd && scp -r -o StrictHostKeyChecking=no -P 22022 dist/* www-data@labs.safefleet.eu:/var/www/labs-web-app
   on:
     branch: master
