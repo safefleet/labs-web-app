@@ -14,4 +14,9 @@ before_script:
 script:
   - yarn lint
   - yarn build
-  - scp -r -o StrictHostKeyChecking=no -P 22022 $TRAVIS_BUILD_DIR/dist/* www-data@labs.safefleet.eu:/var/www/labs-web-app
+
+deploy:
+  provider: script
+  script:  scp -r -o StrictHostKeyChecking=no -P 22022 $TRAVIS_BUILD_DIR/dist/* www-data@labs.safefleet.eu:/var/www/labs-web-app
+  on:
+    branch: master
