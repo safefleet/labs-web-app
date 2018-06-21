@@ -17,6 +17,7 @@ script:
 
 deploy:
   provider: script
-  script: pwd && scp -r -o StrictHostKeyChecking=no -P 22022 dist/* www-data@labs.safefleet.eu:/var/www/labs-web-app
+  skip_cleanup: true
+  script: scp -r -o StrictHostKeyChecking=no -P 22022 dist/* www-data@labs.safefleet.eu:/var/www/labs-web-app
   on:
     branch: master
