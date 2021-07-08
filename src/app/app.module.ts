@@ -5,12 +5,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
 import { AuthService } from './shared/services/auth/auth.service';
 import { httpInterceptorProviders } from './shared/http-interceptors/index';
+import {VehicleService} from './shared/services/vehicle/vehicle.service';
+import {AgmCoreModule} from '@agm/core';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -23,6 +26,7 @@ export function createTranslateLoader(http: HttpClient) {
     imports: [
         CommonModule,
         BrowserModule,
+        FormsModule,
         BrowserAnimationsModule,
         HttpClientModule,
         TranslateModule.forRoot({
@@ -32,11 +36,15 @@ export function createTranslateLoader(http: HttpClient) {
                 deps: [HttpClient]
             }
         }),
-        AppRoutingModule
+        AppRoutingModule,
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyDnnUZ4c_0mxBGKFLPK6m6j91QX6CnSAPA'
+        }),
     ],
     declarations: [AppComponent],
     providers: [AuthGuard,
         AuthService,
+        VehicleService,
         httpInterceptorProviders],
     bootstrap: [AppComponent]
 })

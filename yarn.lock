@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@agm/core@^1.0.0-beta.3":
+  version "1.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@agm/core/-/core-1.0.0-beta.3.tgz#6ec7fd8629134c040f68663b14de3b4a60a8a011"
+
 "@angular-devkit/build-optimizer@0.3.1":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@angular-devkit/build-optimizer/-/build-optimizer-0.3.1.tgz#6a26a46c58858c7b67833c6d8a81198fa17d23e7"
@@ -4235,7 +4239,7 @@ node-pre-gyp@^0.9.0:
     semver "^5.3.0"
     tar "^4"
 
-node-sass@^4.7.2:
+node-sass@^4.7.2, node-sass@^4.9.0:
   version "4.9.0"
   resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.9.0.tgz#d1b8aa855d98ed684d6848db929a20771cc2ae52"
   dependencies:

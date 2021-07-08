@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {VehicleService} from "../../../../shared/services/vehicle/vehicle.service";
 
 @Component({
   selector: 'app-list',
@@ -7,26 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VehicleListComponent implements OnInit {
 
-  vehicles: [Vehicle] = [
-    {
-      id: 7,
-      type: 'Citroen',
-      number: 'CS28ROS',
-      color: 'white',
-      owner: 'adina@mail.com'
-    },
-    {
-      id: 71,
-      type: 'Citroen',
-      number: 'TM28ROS',
-      color: 'red',
-      owner: 'adina2@mail.com'
-    }
-  ];
+  vehicles: [Vehicle];
 
-  constructor() { }
+  constructor(private vehicleService: VehicleService) { }
 
   ngOnInit() {
+    this.vehicleService.getVehicles().subscribe(
+        (response) => {
+          console.log("success: ", response);
+          this.vehicles = response;
+        },
+        (err) => {
+          console.log("error: ", err);
+        }
+    )
   }
 
 }
